@@ -1,23 +1,13 @@
 <div class="row">
-    <div class="col">
-        <div NgbDropdown class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" NgbDropdownToggle>Toggle dropdown</button>
-            <div NgbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item">Action - 1</button>
-                <button class="dropdown-item">Another Action</button>
-                <button class="dropdown-item">Something else is here</button>
+    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+            <button class="btn btn-outline-primary" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+              <button class="dropdown-item">Action - 1</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
             </div>
-        </div>
-    </div>
-
-    <div class="col text-right">
-        <div NgbDropdown placement="top-right" class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic2" NgbDropdownToggle>Toggle dropup</button>
-            <div NgbDropdownMenu aria-labelledby="dropdownBasic2">
-                <button class="dropdown-item">Action - 1</button>
-                <button class="dropdown-item">Another Action</button>
-                <button class="dropdown-item">Something else is here</button>
-            </div>
-        </div>
-    </div>
+          
+            <button class="btn btn-outline-success" (click)="$event.stopPropagation(); myDrop.open();">Open from outside</button>
+            <button class="btn btn-outline-danger" (click)="$event.stopPropagation(); myDrop.close();">Close from outside</button>
+          </div>
 </div>

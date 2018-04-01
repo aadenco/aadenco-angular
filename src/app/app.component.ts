@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular and Bootstrap';
+  title = 'Angular and NG-Bootstrap';
   public isCollapsed = false;
 }
